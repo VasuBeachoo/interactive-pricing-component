@@ -1,0 +1,59 @@
+///////////////////////////////////////
+// VARIABLES //////////////////////////
+
+///////////////////////////////////////
+// MIXINS /////////////////////////////
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+///////////////////////////////////////
+// FUNCTIONS //////////////////////////
+
+///////////////////////////////////////
+// STYLES /////////////////////////////
+
+body {
+  margin: 0;
+}
+
+.component-container {
+  @include flex(column, flex-start, center);
+  min-height: 100vh;
+}
+
+.text {
+  @include flex(column, flex-start, center);
+}
+
+.component {
+  @include flex(column, flex-start, center);
+}
+
+.interactive {
+  @include flex(column, flex-start, center);
+
+  &__text-container {
+    @include flex(row, flex-start, center);
+  }
+
+  &__toggle-container {
+    @include flex(row, flex-start, center);
+  }
+}
+
+.cta {
+  @include flex(row, flex-start, center);
+
+  &__container {
+    @include flex(column, flex-start, flex-start);
+  }
+
+  &__icon-text-container {
+    @include flex(row, flex-start, center);
+  }
+}
