@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
     <title>Interactive Pricing Component</title>
   </head>
@@ -14,54 +20,77 @@
         <p class="text__paragraph">
           Sign up for our 30-day trial. No credit card required.
         </p>
+        <img
+          src="./images/pattern-circles.svg"
+          alt="pattern-circles"
+          class="text__img"
+        />
       </section>
       <div class="component">
         <section class="interactive">
           <div class="interactive__text-container">
-            <p class="interative__view-count-text">
+            <p class="interactive__view-count-text">
               <span class="interactive__view-count">100</span>K PAGEVIEWS
             </p>
-            <p class="interactive__pricing-text">$<span>16.00</span> / month</p>
+            <div class="interactive__pricing-container">
+              <p class="interactive__price">$16.00</p>
+              <p class="interactive__pricing-text">/ month</p>
+            </div>
           </div>
-          <div class="interative__slider-container"></div>
+          <div class="interactive__slider-container">
+            <div class="interactive__slider">
+              <img
+                src="./images/icon-slider.svg"
+                alt="icon-slider"
+                class="interactive__slider-icon"
+                draggable="false"
+              />
+            </div>
+          </div>
           <div class="interactive__toggle-container">
             <p class="interactive__toggle-label">Monthly Billing</p>
-            <div class="interactive__toggle"></div>
+            <div class="interactive__toggle">
+              <div
+                class="interactive__toggle-circle interactive__toggle-circle--monthly"
+              ></div>
+            </div>
             <p class="interactive__toggle-label">Yearly Billing</p>
-            <p class="interactive__discount-tag">25% discount</p>
+            <div class="interactive__discount-tag">
+              <p class="interactive__discount-text">25% discount</p>
+            </div>
           </div>
-          <hr class="interactive__divider" />
-          <section class="cta">
-            <div class="cta__container">
-              <div class="cta__icon-text-container">
-                <img
-                  src="./images/icon-check.svg"
-                  alt="icon-check"
-                  class="cta__icon"
-                />
-                <p class="cta__text">Unlimited websites</p>
-              </div>
-              <div class="cta__icon-text-container">
-                <img
-                  src="./images/icon-check.svg"
-                  alt="icon-check"
-                  class="cta__icon"
-                />
-                <p class="cta__text">100% data ownership</p>
-              </div>
-              <div class="cta__icon-text-container">
-                <img
-                  src="./images/icon-check.svg"
-                  alt="icon-check"
-                  class="cta__icon"
-                />
-                <p class="cta__text">Email reports</p>
-              </div>
+        </section>
+        <hr class="component-divider" />
+        <section class="cta">
+          <div class="cta__container">
+            <div class="cta__icon-text-container">
+              <img
+                src="./images/icon-check.svg"
+                alt="icon-check"
+                class="cta__icon"
+              />
+              <p class="cta__text">Unlimited websites</p>
             </div>
-            <div class="cta__container">
-              <button class="cta__btn">Start my trial</button>
+            <div class="cta__icon-text-container">
+              <img
+                src="./images/icon-check.svg"
+                alt="icon-check"
+                class="cta__icon"
+              />
+              <p class="cta__text">100% data ownership</p>
             </div>
-          </section>
+            <div class="cta__icon-text-container">
+              <img
+                src="./images/icon-check.svg"
+                alt="icon-check"
+                class="cta__icon"
+              />
+              <p class="cta__text">Email reports</p>
+            </div>
+          </div>
+          <div class="cta__container">
+            <button class="cta__btn">Start my trial</button>
+          </div>
         </section>
       </div>
     </main>
