@@ -128,31 +128,46 @@ body {
   }
 
   &__slider-container {
-    background-color: color(Very-light-grayish-blue);
+    @include flex(column, center, stretch);
     width: 100%;
-    height: 8px;
+    height: 10px;
     border-radius: 20px;
     margin: 32px 0 38px;
   }
 
   &__slider {
-    background-color: color(Strong-cyan);
-    width: fit-content;
-    padding: 6px 7px;
-    border-radius: 100%;
-    transform: translateY(-14px);
-    transition: 0.3s;
-    user-select: none;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    border: none;
+    border-radius: 20px;
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      background: url("../images/icon-slider.svg") color(Strong-cyan) center
+        no-repeat;
+      width: 37px;
+      height: 37px;
+      border-radius: 100%;
+    }
+
+    &::-moz-range-thumb {
+      background: url("../images/icon-slider.svg") color(Strong-cyan) center
+        no-repeat;
+      width: 37px;
+      height: 37px;
+      border-radius: 100%;
+    }
 
     &:hover {
       cursor: pointer;
-      background-color: color(Soft-cyan);
     }
   }
 
   &__slider-icon {
     width: 20px;
     filter: brightness(0) invert(1);
+    pointer-events: none;
   }
 
   &__toggle-container {
@@ -171,11 +186,18 @@ body {
   &__toggle {
     @include flex(row, flex-start, center);
 
-    background-color: color(Light-grayish-blue);
     width: 50px;
     height: 25px;
     border-radius: 30px;
     margin: 0 10px;
+
+    &--monthly {
+      background-color: color(Light-grayish-blue);
+    }
+
+    &--yearly {
+      background-color: color(Strong-cyan);
+    }
 
     &:hover {
       cursor: pointer;

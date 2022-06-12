@@ -30,26 +30,19 @@
         <section class="interactive">
           <div class="interactive__text-container">
             <p class="interactive__view-count-text">
-              <span class="interactive__view-count">100</span>K PAGEVIEWS
+              <span class="interactive__view-count"></span>K PAGEVIEWS
             </p>
             <div class="interactive__pricing-container">
-              <p class="interactive__price">$16.00</p>
+              <p class="interactive__price"></p>
               <p class="interactive__pricing-text">/ month</p>
             </div>
           </div>
           <div class="interactive__slider-container">
-            <div class="interactive__slider">
-              <img
-                src="./images/icon-slider.svg"
-                alt="icon-slider"
-                class="interactive__slider-icon"
-                draggable="false"
-              />
-            </div>
+            <input type="range" class="interactive__slider" />
           </div>
           <div class="interactive__toggle-container">
             <p class="interactive__toggle-label">Monthly Billing</p>
-            <div class="interactive__toggle">
+            <div class="interactive__toggle interactive__toggle--monthly">
               <div
                 class="interactive__toggle-circle interactive__toggle-circle--monthly"
               ></div>
@@ -94,5 +87,6 @@
         </section>
       </div>
     </main>
+    <script src="./js/script.js"></script>
   </body>
 </html>

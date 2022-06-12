@@ -164,39 +164,60 @@ body {
 }
 
 .interactive__slider-container {
-  background-color: #eaeefb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   width: 100%;
-  height: 8px;
+  height: 10px;
   border-radius: 20px;
   margin: 32px 0 38px;
 }
 
 .interactive__slider {
-  background-color: #10d5c2;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 6px 7px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  height: 10px;
+  border: none;
+  border-radius: 20px;
+}
+
+.interactive__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  background: url("../images/icon-slider.svg") #10d5c2 center no-repeat;
+  width: 37px;
+  height: 37px;
   border-radius: 100%;
-  -webkit-transform: translateY(-14px);
-          transform: translateY(-14px);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+}
+
+.interactive__slider::-moz-range-thumb {
+  background: url("../images/icon-slider.svg") #10d5c2 center no-repeat;
+  width: 37px;
+  height: 37px;
+  border-radius: 100%;
 }
 
 .interactive__slider:hover {
   cursor: pointer;
-  background-color: #a5f3eb;
 }
 
 .interactive__slider-icon {
   width: 20px;
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
+  pointer-events: none;
 }
 
 .interactive__toggle-container {
@@ -239,11 +260,18 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #cdd7ee;
   width: 50px;
   height: 25px;
   border-radius: 30px;
   margin: 0 10px;
+}
+
+.interactive__toggle--monthly {
+  background-color: #cdd7ee;
+}
+
+.interactive__toggle--yearly {
+  background-color: #10d5c2;
 }
 
 .interactive__toggle:hover {
