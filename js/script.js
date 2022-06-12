@@ -4,10 +4,16 @@ const pricingText = document.querySelector(".interactive__pricing-text");
 const slider = document.querySelector(".interactive__slider");
 const toggle = document.querySelector(".interactive__toggle");
 const toggleCircle = document.querySelector(".interactive__toggle-circle");
+const discountText = document.querySelector(".interactive__discount-text");
 
 let pageCount = 0;
 let planPrice = 0;
 let planType = "monthly";
+
+function handleResize() {
+  if (window.innerWidth <= 650) discountText.innerText = "-25%";
+  else discountText.innerText = "25% discount";
+}
 
 function colorSlider() {
   const sliderValue = (slider.value / 100) * 100;
@@ -53,5 +59,8 @@ toggle.addEventListener("click", () => {
   displayValues();
 });
 
+window.addEventListener("resize", handleResize);
+
 colorSlider();
 displayValues();
+handleResize();

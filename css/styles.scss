@@ -17,6 +17,8 @@ $colors: (
 
 $font: "Manrope", sans-serif;
 
+$mobile-width: 650px;
+
 ///////////////////////////////////////
 // MIXINS /////////////////////////////
 
@@ -25,6 +27,12 @@ $font: "Manrope", sans-serif;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
+}
+
+@mixin mobile() {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
 }
 
 ///////////////////////////////////////
@@ -66,6 +74,7 @@ body {
     font-size: 15.5px;
     font-weight: 600;
     letter-spacing: 0.4px;
+    line-height: 24px;
     margin: 12px 0 0 0;
     z-index: 2;
   }
@@ -83,7 +92,7 @@ body {
   background-color: color(White);
   font-family: $font;
   width: 600px;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   margin: 105px 0 70px;
@@ -149,6 +158,8 @@ body {
       width: 37px;
       height: 37px;
       border-radius: 100%;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     }
 
     &::-moz-range-thumb {
@@ -157,6 +168,8 @@ body {
       width: 37px;
       height: 37px;
       border-radius: 100%;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     }
 
     &:hover {
@@ -222,6 +235,7 @@ body {
   &__discount-tag {
     background-color: color(Light-grayish-red);
     border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     padding: 5px 10px;
     margin-left: 10px;
   }
@@ -276,10 +290,78 @@ body {
     letter-spacing: 0.4px;
     margin: 14.5px 0 0 0;
     transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 
     &:hover {
       cursor: pointer;
       color: color(White);
+    }
+  }
+}
+
+@include mobile() {
+  .text {
+    &__heading {
+      font-size: 24px;
+      text-align: center;
+    }
+
+    &__paragraph {
+      font-size: 14px;
+      width: 55%;
+      text-align: center;
+    }
+
+    &__img {
+      transform: translate(23px, -50px);
+    }
+  }
+
+  .component {
+    width: 330px;
+    margin: 80px 0 55px;
+  }
+
+  .interactive {
+    &__text-container {
+      @include flex(column, flex-start, center);
+    }
+
+    &__pricing-container {
+      margin: 15px 0 5px 0;
+    }
+
+    &__toggle-container {
+      padding: 0 0 0 45px;
+    }
+
+    &__toggle-label {
+      text-align: center;
+      font-size: 12.5px;
+      width: 25%;
+    }
+
+    &__toggle-circle {
+      &--yearly {
+        transform: translateX(23px);
+      }
+    }
+
+    &__discount-tag {
+      margin: 0 0 0 5px;
+    }
+  }
+
+  .cta {
+    @include flex(column, flex-start, center);
+
+    &__container {
+      margin-bottom: 10px;
+    }
+
+    &__text {
+      font-size: 14px;
     }
   }
 }
